@@ -9,8 +9,8 @@ const port = process.env.PORT /*Porta do servidor online*/ || 3000
 
 const path = require('path')
 
-const dbConnection = new sqlite3.Database(path.resolve(__dirname, 'banco.sqlite',
-    sqlite3.OPEN_READWRITE || sqlite3.OPEN_CREATE), (err) => {
+const dbConnection = new sqlite3.Database(path.resolve(__dirname, 'banco.sqlite'),
+    sqlite3.OPEN_READWRITE || sqlite3.OPEN_CREATE, (err) => {
         if (err) {
             console.log('erro: ' + err)
         }
@@ -19,14 +19,14 @@ const dbConnection = new sqlite3.Database(path.resolve(__dirname, 'banco.sqlite'
         }
     });
 
-/*app.use('/admin', (req, res, next)=>{
+app.use('/admin', (req, res, next)=>{
     //console.log(req.hostname)
     if(req.hostname == 'localhost'){
         next()
     }else{
         res.send('Not Allowed')
     }
-})*/
+})
 
 app.set('views', path.join(__dirname, 'views'/*pasta views esse parametro */))    
 app.set('view engine', 'ejs')
