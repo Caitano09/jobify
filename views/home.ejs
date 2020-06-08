@@ -1,0 +1,16 @@
+<%- include('header') %>
+
+<h2>Open roles:</h2>
+<% categorias.forEach(categoria => { %>
+<div>
+    <% if (aux != categoria.categoriaId){ %>
+    <h3><%- categoria.categoria %></h3>
+    <% aux = categoria.categoriaId %>
+    <% } %>
+    <ul>
+        <li> <a href="vaga/<%- categoria.id %>"><%- categoria.titulo %></a></li>
+    </ul>
+</div>
+<% }) %>
+
+<%- include('footer') %>
