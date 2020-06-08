@@ -5,8 +5,10 @@ const sqlite3 = require('sqlite3')
 
 const bodyParser = require('body-parser')
 
+const port = process.env.PORT || 3000
+
 const dbConnection = new sqlite3.Database(('banco.sqlite'),
-    sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
+    sqlite3.OPEN_READWRITE || sqlite3.OPEN_CREATE, (err) => {
         if (err) {
             console.log('erro: ' + err)
         }
