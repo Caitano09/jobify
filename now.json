@@ -1,8 +1,6 @@
 {
     "version": 2,
-    "name": "my-nextjs-project",
     "builds": [
-        { "src": "package.json", "use": "@now/next" },
         {"src": "index.js", "use": "@now/node-server" }
     ],
     "routes": [
