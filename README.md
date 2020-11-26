@@ -21,7 +21,7 @@ Hiring page dynamically. Which can be integrated into a static or dynamic websit
   
   <h2>Public View</h2>
   <img src="public/jobify1.gif" alt="demo">
-
+</div>
 <hr />
 
 ## Features
