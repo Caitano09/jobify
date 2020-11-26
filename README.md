@@ -34,8 +34,8 @@ This app features all the latest tools and practices in mobile development!
 
 ## Getting started
 
-Run npm to install dependecies
-Run npm start for start the app
+Run npm to install dependecies<br>
+Run npm start for start the app<br>
 Use the url /admin to go to the administrative part (ex: localhost:3000/admin)
 
 
