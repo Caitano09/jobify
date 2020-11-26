@@ -2,7 +2,7 @@
 
 <h2>
     Admin Categorias:
-    <a href="/admin/categorias/nova">Nova Categoria</a>
+    <a href="/admin/categorias/nova"><span>Add New Category<span></a> | <a href="javascript:history.back()"> <span> Back </span></a>
 </h2>
 
 <div>
@@ -10,8 +10,8 @@
         <% categorias.forEach(categoria => { %>
         <li>
             <%- categoria.categoria %> | 
-            <a href="/admin/categorias/delete/<%- categoria.id %>">Excluir</a>
-            <a href="/admin/categorias/editar/<%- categoria.id %>">Editar</a>
+            <a href="/admin/categorias/delete/<%- categoria.id %>" onclick="return confirm ('Do you want to delete?')">Delete</a>
+            <a href="/admin/categorias/editar/<%- categoria.id %>">Edit</a>
         </li>
         <% }) %>
     </ul>

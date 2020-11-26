@@ -12,6 +12,10 @@ h2{
     font-size: 24px;
 }
 
+span{
+    font-size: 20px;
+}
+
 h3{
     font-size: 24px;
 }
@@ -48,4 +52,11 @@ textarea{
     padding: 8px;
     width: 540px;
     height: 320;
+}
+
+img{
+    max-width:300px;
+    max-height:200px;
+    width: auto;
+    height: auto;
 }

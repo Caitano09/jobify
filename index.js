@@ -222,10 +222,11 @@ const init = async () => {
     await db.run('create table if not exists vagas (id INTEGER PRIMARY KEY, categoriaId INTEGER, titulo TEXT, descricao TEXT);')
     //const categoria = 'Marketing team'
     //await db.run(`insert into categorias (categoria) values ('${categoria}');`)
-    //const vaga = 'Social Media (San Francisco)'
+    //const vaga = 'Role for social media that did the Fullstack Lab'
     //const descricao = 'Vaga para social media que fez o Fullstack Lab'
     //await db.run(`insert into vagas (categoriaId, titulo, descricao) values (2, '${vaga}', '${descricao}' );`)
     //await db.run(`update vagas set categoriaId = 2 where id = 2`)
+
 }
 
 init()

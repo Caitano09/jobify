@@ -2,19 +2,19 @@
 
 <h2>
     Nova Vaga:
-    <a href="/admin/vagas">Vagas</a>
+    <a href="javascript:history.back()"> <span> Back </span></a>
 </h2>
 
 <div>
 <form action="" method="post">
 
-    <label for="titulo">Título:</label>
+    <label for="titulo">Title:</label>
     <input name="titulo" id="titulo" type="text"><br>
 
-    <label for="descricao">Descrição:</label>
+    <label for="descricao">Description:</label>
     <textarea name="descricao" id="decricao" cols="30" rows="10"></textarea><br>
     
-    <label for="categoria">Categoria:</label>
+    <label for="categoria">Category:</label>
     <select name="categoria" id="categoria">
 
         <% categorias.forEach(categoria =>{ %>
@@ -22,7 +22,7 @@
         <% }) %>
     </select><br>
 
-    <button type="submit">Salvar vaga</button>
+    <button type="submit">Save role</button>
 </form>
 </div>
 

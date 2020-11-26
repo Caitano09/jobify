@@ -1,8 +1,9 @@
 <%- include('header') %>
 
 
-<h2><%- vaga.titulo %></h2>
+<h2><%- vaga.titulo %> | <a href="javascript:history.back()"> <span> Back </span></a> </h2>
 <div>
-    <%- vaga.descricao %> 
+    <%- vaga.descricao %><br/><br/>
+    <button type="submit">Apply for Job</button>
 </div>
 <%- include('footer') %>
