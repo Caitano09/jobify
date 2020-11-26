@@ -23,7 +23,7 @@ Hiring page dynamically. Which can be integrated into a static or dynamic websit
   <img src="public/jobify1.gif" alt="demo">
 
 <hr />
-<div align="center">
+
 ## Features
 [//]: # (Add the features of your project here:)
 This app features all the latest tools and practices in mobile development!
