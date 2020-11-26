@@ -25,7 +25,7 @@ Hiring page dynamically. Which can be integrated into a static or dynamic websit
 </div>
 
 <hr />
-
+<div align="center">
 ## Features
 [//]: # (Add the features of your project here:)
 This app features all the latest tools and practices in mobile development!
@@ -42,3 +42,4 @@ Use the url /admin to go to the administrative part (ex: localhost:3000/admin)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
+</div>
