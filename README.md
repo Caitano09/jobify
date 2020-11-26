@@ -21,8 +21,6 @@ Hiring page dynamically. Which can be integrated into a static or dynamic websit
   
   <h2>Public View</h2>
   <img src="public/jobify1.gif" alt="demo">
-  
-</div>
 
 <hr />
 <div align="center">
@@ -42,4 +40,3 @@ Use the url /admin to go to the administrative part (ex: localhost:3000/admin)
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
-</div>
