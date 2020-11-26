@@ -5,7 +5,8 @@
 <br>
 </h1>
 
-<p align="center">Página de contratação de maneira dinâmica. Que pode ser integrada em um site estático ou dinâmico</p>
+<p align="center">
+Hiring page dynamically. Which can be integrated into a static or dynamic website</p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
@@ -15,10 +16,10 @@
 
 [//]: # (Add your gifs/images here:)
 <div align="center">
-  <h2>Visão dos Administradores</h2>
+  <h2>Administrators View</h2>
   <img src="public/Jobify2.gif" alt="demo">
   
-  <h2>Visão Pública</h2>
+  <h2>Public View</h2>
   <img src="public/jobify1.gif" alt="demo">
   
 </div>
@@ -33,7 +34,9 @@ This app features all the latest tools and practices in mobile development!
 
 ## Getting started
 
-Describe here the way to use/install your project
+Run npm to install dependecies
+Run npm start for start the app
+Use the url /admin to go to the administrative part (ex: localhost:3000/admin)
 
 
 ## License
