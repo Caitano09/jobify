@@ -1,0 +1,18 @@
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+options:
+  docker: true
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Build and push to GCP
+          deployment: production
+          image: google/cloud-sdk:alpine
+          script:
+            - echo $GCP_KEYFILE | base64 -d > /tmp/gcloud-api-key.json
+            - gcloud auth activate-service-account --key-file /tmp/gcloud-api-key.json
+            - gcloud config set project $GCP_PROJECT
+            - gcloud run deploy $GCP_IMAGE_NAME --source . --allow-unauthenticated --region us-central1 --vpc-connector projects/soma-infra-network/locations/us-central1/connectors/vpc-connector-us-central1 --region us-central1
+            # - gcloud builds submit --pack image=us-central1-docker.pkg.dev/apt-bonbon-179602/cloud-run-source-deploy/mais-atacado-wise-buildpack ./wise
+            # - gcloud run deploy mais-atacado-wise --image us-central1-docker.pkg.dev/apt-bonbon-179602/cloud-run-source-deploy/mais-atacado-wise-buildpack --allow-unauthenticated --vpc-connector projects/soma-infra-network/locations/us-central1/connectors/vpc-connector-us-central1 --region us-central1
