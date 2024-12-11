@@ -1,16 +1,38 @@
-# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
-options:
-  docker: true
+name: Deploy to GCP
 
-pipelines:
-  branches:
-    master:
-      - step:
-          name: Build and push to GCP
-          deployment: production
-          image: google/cloud-sdk:alpine
-          script:
-            - echo $GCP_KEYFILE | base64 -d > /tmp/gcloud-api-key.json
-            - gcloud auth activate-service-account --key-file /tmp/gcloud-api-key.json
-            - gcloud config set project $GCP_PROJECT
-            - gcloud run deploy $GCP_IMAGE_NAME --source . --allow-unauthenticated --region us-central1
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Build and Push to GCP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          version: 'latest'
+
+      - name: Authenticate with GCP
+        env:
+          GCP_KEYFILE: ${{ secrets.GCP_KEYFILE }}
+        run: |
+          echo "$GCP_KEYFILE" | base64 -d > /tmp/gcloud-api-key.json
+          gcloud auth activate-service-account --key-file=/tmp/gcloud-api-key.json
+
+      - name: Configure GCP project
+        run: |
+          gcloud config set project ${{ secrets.GCP_PROJECT }}
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy ${{ secrets.GCP_IMAGE_NAME }} \
+            --source . \
+            --allow-unauthenticated \
+            --region us-central1
