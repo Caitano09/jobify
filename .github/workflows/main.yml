@@ -1,0 +1,16 @@
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+options:
+  docker: true
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Build and push to GCP
+          deployment: production
+          image: google/cloud-sdk:alpine
+          script:
+            - echo $GCP_KEYFILE | base64 -d > /tmp/gcloud-api-key.json
+            - gcloud auth activate-service-account --key-file /tmp/gcloud-api-key.json
+            - gcloud config set project $GCP_PROJECT
+            - gcloud run deploy $GCP_IMAGE_NAME --source . --allow-unauthenticated --region us-central1
